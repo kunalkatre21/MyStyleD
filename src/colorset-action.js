@@ -17,13 +17,16 @@ const createDir = (path) => {
 };
 
 module.exports = {
+  // Add a name for your action
+  name: 'ios-colorsets',
+
   do: (dictionary, { buildPath }) => {
     const assetPath = path.join(buildPath, "DesignTokens.xcassets");
 
     createDir(assetPath);
     fs.writeFileSync(`${assetPath}/Contents.json`, JSON.stringify(CONTENTS));
 
-    dictionary.allProperties
+    dictionary.allTokens
       .filter((token) => {
         return token.attributes.category === `color`;
       })
@@ -53,5 +56,9 @@ module.exports = {
         );
       });
   },
-  undo: function (dictionary, platform) {},
+
+  undo: function (dictionary, { buildPath }) {
+    const assetPath = path.join(buildPath, "DesignTokens.xcassets");
+    fs.rmdirSync(assetPath, { recursive: true });
+  }
 };

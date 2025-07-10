@@ -1,13 +1,15 @@
 {
   "source": ["tokens/**/*.json"],
   "action": {
-    "colorsets": "require[./src/colorset-action]"
+    "colorsets": "require[src/colorset-action]"
   },
   "platforms": {
     "ios-colorsets": {
+      "transformGroup": "ios",
       "buildPath": "build/ios-colorsets/",
-      "transforms": ["attribute/cti", "name/cti/pascal", "attribute/color"],
-      "actions": ["colorsets"],
+      "transforms": ["attribute/cti", "name/pascal", "attribute/color"],
+      "files": [],
+      "actions": ["ios-colorsets"]
     },
     "css": {
       "transformGroup": "css",
