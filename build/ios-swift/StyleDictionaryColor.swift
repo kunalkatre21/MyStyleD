@@ -9,11 +9,11 @@
 import UIKit
 
 public enum StyleDictionaryColor {
-    public static let addOnsSectionBackground = UIColor(red: 0.949, green: 0.957, blue: 0.969, alpha: 1)
     public static let backgroundBrand = UIColor(red: 0.420, green: 0.361, blue: 0.878, alpha: 1)
     public static let backgroundDark = UIColor(red: 0.894, green: 0.906, blue: 0.925, alpha: 1)
     public static let backgroundError = UIColor(red: 0.843, green: 0.294, blue: 0.255, alpha: 1)
     public static let backgroundInfo = UIColor(red: 0.220, green: 0.345, blue: 0.980, alpha: 1)
+    public static let backgroundInverse = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
     public static let backgroundLight = UIColor(red: 0.949, green: 0.957, blue: 0.969, alpha: 1)
     public static let backgroundSuccess = UIColor(red: 0.137, green: 0.663, blue: 0.349, alpha: 1)
     public static let backgroundWarning = UIColor(red: 0.929, green: 0.537, blue: 0.212, alpha: 1)
@@ -96,7 +96,7 @@ public enum StyleDictionaryColor {
     public static let schemesOutline = UIColor(red: 0.851, green: 0.867, blue: 0.890, alpha: 1)
     public static let schemesOutlineVariant = UIColor(red: 0.745, green: 0.773, blue: 0.816, alpha: 1)
     public static let schemesPrimary = UIColor(red: 0.420, green: 0.361, blue: 0.878, alpha: 1)
-    public static let schemesPrimaryContainer = UIColor(red: 0.839, green: 0.820, blue: 0.965, alpha: 1)
+    public static let schemesPrimaryContainer = UIColor(red: 0.894, green: 0.906, blue: 0.925, alpha: 1)
     public static let schemesPrimaryFixed = UIColor(red: 0.957, green: 0.949, blue: 1.000, alpha: 1)
     public static let schemesPrimaryFixedDim = UIColor(red: 0.839, green: 0.820, blue: 0.965, alpha: 1)
     public static let schemesScrim = UIColor(red: 0.102, green: 0.102, blue: 0.102, alpha: 1)
@@ -269,6 +269,7 @@ public enum StyleDictionaryColor {
     public static let textBrand = UIColor(red: 0.420, green: 0.361, blue: 0.878, alpha: 1)
     public static let textError = UIColor(red: 0.843, green: 0.294, blue: 0.255, alpha: 1)
     public static let textInfo = UIColor(red: 0.220, green: 0.345, blue: 0.980, alpha: 1)
+    public static let textInverse = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
     public static let textPrimary = UIColor(red: 0.067, green: 0.106, blue: 0.192, alpha: 1)
     public static let textSecondary = UIColor(red: 0.129, green: 0.180, blue: 0.251, alpha: 1)
     public static let textSuccess = UIColor(red: 0.137, green: 0.663, blue: 0.349, alpha: 1)

@@ -80,6 +80,7 @@
 [UIColor colorWithRed:0.220f green:0.345f blue:0.980f alpha:1.000f],
 [UIColor colorWithRed:0.929f green:0.537f blue:0.212f alpha:1.000f],
 [UIColor colorWithRed:1.000f green:1.000f blue:1.000f alpha:1.000f],
+[UIColor colorWithRed:1.000f green:1.000f blue:1.000f alpha:1.000f],
 [UIColor colorWithRed:0.949f green:0.957f blue:0.969f alpha:1.000f],
 [UIColor colorWithRed:0.894f green:0.906f blue:0.925f alpha:1.000f],
 [UIColor colorWithRed:0.420f green:0.361f blue:0.878f alpha:1.000f],
@@ -87,6 +88,7 @@
 [UIColor colorWithRed:0.137f green:0.663f blue:0.349f alpha:1.000f],
 [UIColor colorWithRed:0.220f green:0.345f blue:0.980f alpha:1.000f],
 [UIColor colorWithRed:0.929f green:0.537f blue:0.212f alpha:1.000f],
+[UIColor colorWithRed:1.000f green:1.000f blue:1.000f alpha:1.000f],
 [UIColor colorWithRed:0.894f green:0.906f blue:0.925f alpha:1.000f],
 [UIColor colorWithRed:0.851f green:0.867f blue:0.890f alpha:1.000f],
 [UIColor colorWithRed:0.745f green:0.773f blue:0.816f alpha:1.000f],
@@ -98,7 +100,7 @@
 [UIColor colorWithRed:0.420f green:0.361f blue:0.878f alpha:1.000f],
 [UIColor colorWithRed:0.420f green:0.361f blue:0.878f alpha:1.000f],
 [UIColor colorWithRed:1.000f green:1.000f blue:1.000f alpha:1.000f],
-[UIColor colorWithRed:0.839f green:0.820f blue:0.965f alpha:1.000f],
+[UIColor colorWithRed:0.894f green:0.906f blue:0.925f alpha:1.000f],
 [UIColor colorWithRed:0.153f green:0.106f blue:0.494f alpha:1.000f],
 [UIColor colorWithRed:0.220f green:0.345f blue:0.980f alpha:1.000f],
 [UIColor colorWithRed:1.000f green:1.000f blue:1.000f alpha:1.000f],
@@ -290,8 +292,7 @@
 [UIColor colorWithRed:1.000f green:1.000f blue:1.000f alpha:0.161f],
 [UIColor colorWithRed:0.910f green:0.910f blue:0.910f alpha:0.078f],
 [UIColor colorWithRed:0.910f green:0.910f blue:0.910f alpha:0.102f],
-[UIColor colorWithRed:0.910f green:0.910f blue:0.910f alpha:0.161f],
-[UIColor colorWithRed:0.949f green:0.957f blue:0.969f alpha:1.000f]
+[UIColor colorWithRed:0.910f green:0.910f blue:0.910f alpha:0.161f]
     ];
   });
 

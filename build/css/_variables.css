@@ -62,6 +62,7 @@
   --text-success: #23a959;
   --text-info: #3858fa;
   --text-warning: #ed8936;
+  --text-inverse: #ffffff;
   --background-white: #ffffff;
   --background-light: #f2f4f7;
   --background-dark: #e4e7ec;
@@ -70,6 +71,7 @@
   --background-success: #23a959;
   --background-info: #3858fa;
   --background-warning: #ed8936;
+  --background-inverse: #ffffff;
   --border-light: #e4e7ec;
   --border-neutral: #d9dde3;
   --border-dark: #bec5d0;
@@ -81,7 +83,7 @@
   --schemes-primary: #6b5ce0;
   --schemes-surface-tint: #6b5ce0;
   --schemes-on-primary: #ffffff;
-  --schemes-primary-container: #d6d1f6;
+  --schemes-primary-container: #e4e7ec;
   --schemes-on-primary-container: #271b7e;
   --schemes-secondary: #3858fa;
   --schemes-on-secondary: #ffffff;
@@ -274,5 +276,4 @@
   --state-layers-surface-dim-opacity-08: rgba(232, 232, 232, 0.08);
   --state-layers-surface-dim-opacity-10: rgba(232, 232, 232, 0.1);
   --state-layers-surface-dim-opacity-16: rgba(232, 232, 232, 0.16);
-  --add-ons-section-background: #f2f4f7;
 }

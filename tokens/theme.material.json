@@ -2,19 +2,19 @@
   "Schemes": {
     "Primary": {
       "$type": "color",
-      "$value": "{brand.purple.500}"
+      "$value": "{background.brand}"
     },
     "Surface Tint": {
       "$type": "color",
-      "$value": "{brand.purple.500}"
+      "$value": "{background.brand}"
     },
     "On Primary": {
       "$type": "color",
-      "$value": "{white}"
+      "$value": "{text.inverse}"
     },
     "Primary Container": {
       "$type": "color",
-      "$value": "{brand.purple.100}"
+      "$value": "{background.dark}"
     },
     "On Primary Container": {
       "$type": "color",
@@ -22,11 +22,11 @@
     },
     "Secondary": {
       "$type": "color",
-      "$value": "{blue.500}"
+      "$value": "{background.info}"
     },
     "On Secondary": {
       "$type": "color",
-      "$value": "{white}"
+      "$value": "{background.white}"
     },
     "Secondary Container": {
       "$type": "color",
@@ -38,11 +38,11 @@
     },
     "Tertiary": {
       "$type": "color",
-      "$value": "{green.500}"
+      "$value": "{background.success}"
     },
     "On Tertiary": {
       "$type": "color",
-      "$value": "{white}"
+      "$value": "{background.white}"
     },
     "Tertiary Container": {
       "$type": "color",
@@ -54,11 +54,11 @@
     },
     "Error": {
       "$type": "color",
-      "$value": "{red.500}"
+      "$value": "{background.error}"
     },
     "On Error": {
       "$type": "color",
-      "$value": "{white}"
+      "$value": "{background.white}"
     },
     "Error Container": {
       "$type": "color",
@@ -70,35 +70,35 @@
     },
     "Background": {
       "$type": "color",
-      "$value": "{neutrals.50}"
+      "$value": "{background.light}"
     },
     "On Background": {
       "$type": "color",
-      "$value": "{neutrals.900}"
+      "$value": "{text.primary}"
     },
     "Surface": {
       "$type": "color",
-      "$value": "{neutrals.50}"
+      "$value": "{background.light}"
     },
     "On Surface": {
       "$type": "color",
-      "$value": "{neutrals.900}"
+      "$value": "{text.primary}"
     },
     "Surface Variant": {
       "$type": "color",
-      "$value": "{neutrals.100}"
+      "$value": "{background.dark}"
     },
     "On Surface Variant": {
       "$type": "color",
-      "$value": "{neutrals.700}"
+      "$value": "{text.secondary}"
     },
     "Outline": {
       "$type": "color",
-      "$value": "{neutrals.200}"
+      "$value": "{border.neutral}"
     },
     "Outline Variant": {
       "$type": "color",
-      "$value": "{neutrals.300}"
+      "$value": "{border.dark}"
     },
     "Shadow": {
       "$type": "color",
@@ -110,11 +110,11 @@
     },
     "Inverse Surface": {
       "$type": "color",
-      "$value": "{neutrals.800}"
+      "$value": "{text.secondary}"
     },
     "Inverse On Surface": {
       "$type": "color",
-      "$value": "{neutrals.50}"
+      "$value": "{background.light}"
     },
     "Inverse Primary": {
       "$type": "color",
@@ -170,31 +170,31 @@
     },
     "Surface Dim": {
       "$type": "color",
-      "$value": "{neutrals.100}"
+      "$value": "{background.dark}"
     },
     "Surface Bright": {
       "$type": "color",
-      "$value": "{white}"
+      "$value": "{background.white}"
     },
     "Surface Container Lowest": {
       "$type": "color",
-      "$value": "{white}"
+      "$value": "{background.white}"
     },
     "Surface Container Low": {
       "$type": "color",
-      "$value": "{neutrals.50}"
+      "$value": "{background.light}"
     },
     "Surface Container": {
       "$type": "color",
-      "$value": "{neutrals.100}"
+      "$value": "{background.dark}"
     },
     "Surface Container High": {
       "$type": "color",
-      "$value": "{neutrals.200}"
+      "$value": "{border.neutral}"
     },
     "Surface Container Highest": {
       "$type": "color",
-      "$value": "{neutrals.300}"
+      "$value": "{border.dark}"
     }
   },
   "State Layers": {
@@ -883,12 +883,6 @@
         "$type": "color",
         "$value": "#e8e8e829"
       }
-    }
-  },
-  "Add-ons": {
-    "Section background": {
-      "$type": "color",
-      "$value": "{background.light}"
     }
   }
 }

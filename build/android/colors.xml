@@ -63,6 +63,7 @@
   <color name="text_success">#ff23a959</color>
   <color name="text_info">#ff3858fa</color>
   <color name="text_warning">#ffed8936</color>
+  <color name="text_inverse">#ffffffff</color>
   <color name="background_white">#ffffffff</color>
   <color name="background_light">#fff2f4f7</color>
   <color name="background_dark">#ffe4e7ec</color>
@@ -71,6 +72,7 @@
   <color name="background_success">#ff23a959</color>
   <color name="background_info">#ff3858fa</color>
   <color name="background_warning">#ffed8936</color>
+  <color name="background_inverse">#ffffffff</color>
   <color name="border_light">#ffe4e7ec</color>
   <color name="border_neutral">#ffd9dde3</color>
   <color name="border_dark">#ffbec5d0</color>
@@ -82,7 +84,7 @@
   <color name="schemes_primary">#ff6b5ce0</color>
   <color name="schemes_surface_tint">#ff6b5ce0</color>
   <color name="schemes_on_primary">#ffffffff</color>
-  <color name="schemes_primary_container">#ffd6d1f6</color>
+  <color name="schemes_primary_container">#ffe4e7ec</color>
   <color name="schemes_on_primary_container">#ff271b7e</color>
   <color name="schemes_secondary">#ff3858fa</color>
   <color name="schemes_on_secondary">#ffffffff</color>
@@ -275,5 +277,4 @@
   <color name="state_layers_surface_dim_opacity_08">#14e8e8e8</color>
   <color name="state_layers_surface_dim_opacity_10">#1ae8e8e8</color>
   <color name="state_layers_surface_dim_opacity_16">#29e8e8e8</color>
-  <color name="add_ons_section_background">#fff2f4f7</color>
 </resources>

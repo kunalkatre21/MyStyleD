@@ -2,25 +2,30 @@
 
 module.exports = {
   name: 'compose/object-with-references',
-  format: function({ dictionary, file }) { // Correct property name is 'format'
+  format: function({ dictionary, file }) {
     const { allTokens } = dictionary;
     const { packageName, className } = file.options;
 
-    // Filter tokens into primitives (have a raw hex) and semantics (have an alias)
     const primitives = allTokens.filter(token =>
-      token.original.$value && token.original.$value.startsWith('#')
+      token.original?.$value && token.original.$value.startsWith('#')
     );
     const semantics = allTokens.filter(token =>
-      token.original.$value && token.original.$value.startsWith('{')
+      token.original?.$value && token.original.$value.startsWith('{')
     );
 
-    // A map to quickly find a primitive token by its alias path for referencing
     const primitiveMap = new Map(primitives.map(token => [token.path.join('.'), token]));
 
     // Generate Kotlin properties for primitive colors.
-    // The `transforms` in config.json have already run, so token.name and token.value are correct.
     const primitiveProperties = primitives.map(token => {
-      return `  val ${token.name} = ${token.value}`;
+      // --- THE FIX IS HERE ---
+      // The debug logs showed the transformed value is in token.$value, not token.value.
+      // We will now read from the correct property.
+      const value = token.$value; 
+      if (value === undefined) {
+        // Add a fallback for safety, in case other tokens behave differently.
+        return `  // ERROR: Transformed value for "${token.name}" is undefined.`;
+      }
+      return `  val ${token.name} = ${value}`;
     }).join('\n');
 
     // Generate Kotlin properties for semantic colors, referencing primitives

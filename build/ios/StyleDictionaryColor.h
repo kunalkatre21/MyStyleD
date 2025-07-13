@@ -68,6 +68,7 @@ TextError,
 TextSuccess,
 TextInfo,
 TextWarning,
+TextInverse,
 BackgroundWhite,
 BackgroundLight,
 BackgroundDark,
@@ -76,6 +77,7 @@ BackgroundError,
 BackgroundSuccess,
 BackgroundInfo,
 BackgroundWarning,
+BackgroundInverse,
 BorderLight,
 BorderNeutral,
 BorderDark,
@@ -279,8 +281,7 @@ StateLayersSurfaceBrightOpacity10,
 StateLayersSurfaceBrightOpacity16,
 StateLayersSurfaceDimOpacity08,
 StateLayersSurfaceDimOpacity10,
-StateLayersSurfaceDimOpacity16,
-AddOnsSectionBackground
+StateLayersSurfaceDimOpacity16
 };
 
 @interface StyleDictionaryColor : NSObject

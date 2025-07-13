@@ -37,7 +37,7 @@
       ]
     },
     "compose": {
-      "transforms": ["attribute/cti", "name/cti/camel", "color/compose", "size/dp"],
+      "transforms": ["attribute/color", "name/camel", "color/composeColor"],
       "buildPath": "build/compose/",
       "files": [
         {
