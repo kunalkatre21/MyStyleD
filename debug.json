@@ -1,0 +1,1585 @@
+[
+  {
+    "key": "{black}",
+    "$type": "color",
+    "$value": "Color(0xff1a1a1a)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#1a1a1a",
+      "key": "{black}"
+    },
+    "name": "black",
+    "attributes": {
+      "category": "black"
+    },
+    "path": [
+      "black"
+    ]
+  },
+  {
+    "key": "{white}",
+    "$type": "color",
+    "$value": "Color(0xffffffff)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "key": "{white}"
+    },
+    "name": "white",
+    "attributes": {
+      "category": "white"
+    },
+    "path": [
+      "white"
+    ]
+  },
+  {
+    "key": "{orange.100}",
+    "$type": "color",
+    "$value": "Color(0xfffffaf0)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#fffaf0",
+      "key": "{orange.100}"
+    },
+    "name": "orange100",
+    "attributes": {
+      "category": "orange",
+      "type": "100"
+    },
+    "path": [
+      "orange",
+      "100"
+    ]
+  },
+  {
+    "key": "{orange.200}",
+    "$type": "color",
+    "$value": "Color(0xfffeebc8)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#feebc8",
+      "key": "{orange.200}"
+    },
+    "name": "orange200",
+    "attributes": {
+      "category": "orange",
+      "type": "200"
+    },
+    "path": [
+      "orange",
+      "200"
+    ]
+  },
+  {
+    "key": "{orange.300}",
+    "$type": "color",
+    "$value": "Color(0xfffbd38d)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#fbd38d",
+      "key": "{orange.300}"
+    },
+    "name": "orange300",
+    "attributes": {
+      "category": "orange",
+      "type": "300"
+    },
+    "path": [
+      "orange",
+      "300"
+    ]
+  },
+  {
+    "key": "{orange.400}",
+    "$type": "color",
+    "$value": "Color(0xfff6ad55)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#f6ad55",
+      "key": "{orange.400}"
+    },
+    "name": "orange400",
+    "attributes": {
+      "category": "orange",
+      "type": "400"
+    },
+    "path": [
+      "orange",
+      "400"
+    ]
+  },
+  {
+    "key": "{orange.500}",
+    "$type": "color",
+    "$value": "Color(0xffed8936)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#ed8936",
+      "key": "{orange.500}"
+    },
+    "name": "orange500",
+    "attributes": {
+      "category": "orange",
+      "type": "500"
+    },
+    "path": [
+      "orange",
+      "500"
+    ]
+  },
+  {
+    "key": "{orange.600}",
+    "$type": "color",
+    "$value": "Color(0xffdd6b20)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#dd6b20",
+      "key": "{orange.600}"
+    },
+    "name": "orange600",
+    "attributes": {
+      "category": "orange",
+      "type": "600"
+    },
+    "path": [
+      "orange",
+      "600"
+    ]
+  },
+  {
+    "key": "{orange.700}",
+    "$type": "color",
+    "$value": "Color(0xffc05621)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#c05621",
+      "key": "{orange.700}"
+    },
+    "name": "orange700",
+    "attributes": {
+      "category": "orange",
+      "type": "700"
+    },
+    "path": [
+      "orange",
+      "700"
+    ]
+  },
+  {
+    "key": "{orange.800}",
+    "$type": "color",
+    "$value": "Color(0xff9c4221)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#9c4221",
+      "key": "{orange.800}"
+    },
+    "name": "orange800",
+    "attributes": {
+      "category": "orange",
+      "type": "800"
+    },
+    "path": [
+      "orange",
+      "800"
+    ]
+  },
+  {
+    "key": "{orange.900}",
+    "$type": "color",
+    "$value": "Color(0xff7b341e)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#7b341e",
+      "key": "{orange.900}"
+    },
+    "name": "orange900",
+    "attributes": {
+      "category": "orange",
+      "type": "900"
+    },
+    "path": [
+      "orange",
+      "900"
+    ]
+  },
+  {
+    "key": "{neutrals.50}",
+    "$type": "color",
+    "$value": "Color(0xfff2f4f7)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#f2f4f7",
+      "key": "{neutrals.50}"
+    },
+    "name": "neutrals50",
+    "attributes": {
+      "category": "neutrals",
+      "type": "50"
+    },
+    "path": [
+      "neutrals",
+      "50"
+    ]
+  },
+  {
+    "key": "{neutrals.100}",
+    "$type": "color",
+    "$value": "Color(0xffe4e7ec)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#e4e7ec",
+      "key": "{neutrals.100}"
+    },
+    "name": "neutrals100",
+    "attributes": {
+      "category": "neutrals",
+      "type": "100"
+    },
+    "path": [
+      "neutrals",
+      "100"
+    ]
+  },
+  {
+    "key": "{neutrals.200}",
+    "$type": "color",
+    "$value": "Color(0xffd9dde3)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#d9dde3",
+      "key": "{neutrals.200}"
+    },
+    "name": "neutrals200",
+    "attributes": {
+      "category": "neutrals",
+      "type": "200"
+    },
+    "path": [
+      "neutrals",
+      "200"
+    ]
+  },
+  {
+    "key": "{neutrals.300}",
+    "$type": "color",
+    "$value": "Color(0xffbec5d0)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#bec5d0",
+      "key": "{neutrals.300}"
+    },
+    "name": "neutrals300",
+    "attributes": {
+      "category": "neutrals",
+      "type": "300"
+    },
+    "path": [
+      "neutrals",
+      "300"
+    ]
+  },
+  {
+    "key": "{neutrals.400}",
+    "$type": "color",
+    "$value": "Color(0xff9ea8b8)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#9ea8b8",
+      "key": "{neutrals.400}"
+    },
+    "name": "neutrals400",
+    "attributes": {
+      "category": "neutrals",
+      "type": "400"
+    },
+    "path": [
+      "neutrals",
+      "400"
+    ]
+  },
+  {
+    "key": "{neutrals.500}",
+    "$type": "color",
+    "$value": "Color(0xff4b596d)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#4b596d",
+      "key": "{neutrals.500}"
+    },
+    "name": "neutrals500",
+    "attributes": {
+      "category": "neutrals",
+      "type": "500"
+    },
+    "path": [
+      "neutrals",
+      "500"
+    ]
+  },
+  {
+    "key": "{neutrals.600}",
+    "$type": "color",
+    "$value": "Color(0xff4b596d)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#4b596d",
+      "key": "{neutrals.600}"
+    },
+    "name": "neutrals600",
+    "attributes": {
+      "category": "neutrals",
+      "type": "600"
+    },
+    "path": [
+      "neutrals",
+      "600"
+    ]
+  },
+  {
+    "key": "{neutrals.700}",
+    "$type": "color",
+    "$value": "Color(0xff212e40)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#212e40",
+      "key": "{neutrals.700}"
+    },
+    "name": "neutrals700",
+    "attributes": {
+      "category": "neutrals",
+      "type": "700"
+    },
+    "path": [
+      "neutrals",
+      "700"
+    ]
+  },
+  {
+    "key": "{neutrals.800}",
+    "$type": "color",
+    "$value": "Color(0xff212e40)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#212e40",
+      "key": "{neutrals.800}"
+    },
+    "name": "neutrals800",
+    "attributes": {
+      "category": "neutrals",
+      "type": "800"
+    },
+    "path": [
+      "neutrals",
+      "800"
+    ]
+  },
+  {
+    "key": "{neutrals.900}",
+    "$type": "color",
+    "$value": "Color(0xff111b31)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#111b31",
+      "key": "{neutrals.900}"
+    },
+    "name": "neutrals900",
+    "attributes": {
+      "category": "neutrals",
+      "type": "900"
+    },
+    "path": [
+      "neutrals",
+      "900"
+    ]
+  },
+  {
+    "key": "{brand.purple.50}",
+    "$type": "color",
+    "$value": "Color(0xfff4f2ff)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#f4f2ff",
+      "key": "{brand.purple.50}"
+    },
+    "name": "brandPurple50",
+    "attributes": {
+      "category": "brand",
+      "type": "purple",
+      "item": "50"
+    },
+    "path": [
+      "brand",
+      "purple",
+      "50"
+    ]
+  },
+  {
+    "key": "{brand.purple.100}",
+    "$type": "color",
+    "$value": "Color(0xffd6d1f6)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#d6d1f6",
+      "key": "{brand.purple.100}"
+    },
+    "name": "brandPurple100",
+    "attributes": {
+      "category": "brand",
+      "type": "purple",
+      "item": "100"
+    },
+    "path": [
+      "brand",
+      "purple",
+      "100"
+    ]
+  },
+  {
+    "key": "{brand.purple.300}",
+    "$type": "color",
+    "$value": "Color(0xffb3abed)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#b3abed",
+      "key": "{brand.purple.300}"
+    },
+    "name": "brandPurple300",
+    "attributes": {
+      "category": "brand",
+      "type": "purple",
+      "item": "300"
+    },
+    "path": [
+      "brand",
+      "purple",
+      "300"
+    ]
+  },
+  {
+    "key": "{brand.purple.500}",
+    "$type": "color",
+    "$value": "Color(0xff6b5ce0)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#6b5ce0",
+      "key": "{brand.purple.500}"
+    },
+    "name": "brandPurple500",
+    "attributes": {
+      "category": "brand",
+      "type": "purple",
+      "item": "500"
+    },
+    "path": [
+      "brand",
+      "purple",
+      "500"
+    ]
+  },
+  {
+    "key": "{brand.purple.600}",
+    "$type": "color",
+    "$value": "Color(0xff3e2fac)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#3e2fac",
+      "key": "{brand.purple.600}"
+    },
+    "name": "brandPurple600",
+    "attributes": {
+      "category": "brand",
+      "type": "purple",
+      "item": "600"
+    },
+    "path": [
+      "brand",
+      "purple",
+      "600"
+    ]
+  },
+  {
+    "key": "{brand.purple.700}",
+    "$type": "color",
+    "$value": "Color(0xff271b7e)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#271b7e",
+      "key": "{brand.purple.700}"
+    },
+    "name": "brandPurple700",
+    "attributes": {
+      "category": "brand",
+      "type": "purple",
+      "item": "700"
+    },
+    "path": [
+      "brand",
+      "purple",
+      "700"
+    ]
+  },
+  {
+    "key": "{green.50}",
+    "$type": "color",
+    "$value": "Color(0xffeafbf1)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#eafbf1",
+      "key": "{green.50}"
+    },
+    "name": "green50",
+    "attributes": {
+      "category": "green",
+      "type": "50"
+    },
+    "path": [
+      "green",
+      "50"
+    ]
+  },
+  {
+    "key": "{green.100}",
+    "$type": "color",
+    "$value": "Color(0xffabedc5)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#abedc5",
+      "key": "{green.100}"
+    },
+    "name": "green100",
+    "attributes": {
+      "category": "green",
+      "type": "100"
+    },
+    "path": [
+      "green",
+      "100"
+    ]
+  },
+  {
+    "key": "{green.300}",
+    "$type": "color",
+    "$value": "Color(0xff56dc8c)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#56dc8c",
+      "key": "{green.300}"
+    },
+    "name": "green300",
+    "attributes": {
+      "category": "green",
+      "type": "300"
+    },
+    "path": [
+      "green",
+      "300"
+    ]
+  },
+  {
+    "key": "{green.500}",
+    "$type": "color",
+    "$value": "Color(0xff23a959)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#23a959",
+      "key": "{green.500}"
+    },
+    "name": "green500",
+    "attributes": {
+      "category": "green",
+      "type": "500"
+    },
+    "path": [
+      "green",
+      "500"
+    ]
+  },
+  {
+    "key": "{green.600}",
+    "$type": "color",
+    "$value": "Color(0xff1b7e43)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#1b7e43",
+      "key": "{green.600}"
+    },
+    "name": "green600",
+    "attributes": {
+      "category": "green",
+      "type": "600"
+    },
+    "path": [
+      "green",
+      "600"
+    ]
+  },
+  {
+    "key": "{green.700}",
+    "$type": "color",
+    "$value": "Color(0xff12542c)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#12542c",
+      "key": "{green.700}"
+    },
+    "name": "green700",
+    "attributes": {
+      "category": "green",
+      "type": "700"
+    },
+    "path": [
+      "green",
+      "700"
+    ]
+  },
+  {
+    "key": "{red.50}",
+    "$type": "color",
+    "$value": "Color(0xfffbedec)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#fbedec",
+      "key": "{red.50}"
+    },
+    "name": "red50",
+    "attributes": {
+      "category": "red",
+      "type": "50"
+    },
+    "path": [
+      "red",
+      "50"
+    ]
+  },
+  {
+    "key": "{red.100}",
+    "$type": "color",
+    "$value": "Color(0xfff7dbd9)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#f7dbd9",
+      "key": "{red.100}"
+    },
+    "name": "red100",
+    "attributes": {
+      "category": "red",
+      "type": "100"
+    },
+    "path": [
+      "red",
+      "100"
+    ]
+  },
+  {
+    "key": "{red.300}",
+    "$type": "color",
+    "$value": "Color(0xffe7938d)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#e7938d",
+      "key": "{red.300}"
+    },
+    "name": "red300",
+    "attributes": {
+      "category": "red",
+      "type": "300"
+    },
+    "path": [
+      "red",
+      "300"
+    ]
+  },
+  {
+    "key": "{red.500}",
+    "$type": "color",
+    "$value": "Color(0xffd74b41)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#d74b41",
+      "key": "{red.500}"
+    },
+    "name": "red500",
+    "attributes": {
+      "category": "red",
+      "type": "500"
+    },
+    "path": [
+      "red",
+      "500"
+    ]
+  },
+  {
+    "key": "{red.600}",
+    "$type": "color",
+    "$value": "Color(0xffac3c34)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#ac3c34",
+      "key": "{red.600}"
+    },
+    "name": "red600",
+    "attributes": {
+      "category": "red",
+      "type": "600"
+    },
+    "path": [
+      "red",
+      "600"
+    ]
+  },
+  {
+    "key": "{red.700}",
+    "$type": "color",
+    "$value": "Color(0xff812d27)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#812d27",
+      "key": "{red.700}"
+    },
+    "name": "red700",
+    "attributes": {
+      "category": "red",
+      "type": "700"
+    },
+    "path": [
+      "red",
+      "700"
+    ]
+  },
+  {
+    "key": "{blue.50}",
+    "$type": "color",
+    "$value": "Color(0xffe6eafe)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#e6eafe",
+      "key": "{blue.50}"
+    },
+    "name": "blue50",
+    "attributes": {
+      "category": "blue",
+      "type": "50"
+    },
+    "path": [
+      "blue",
+      "50"
+    ]
+  },
+  {
+    "key": "{blue.100}",
+    "$type": "color",
+    "$value": "Color(0xffcdd5fe)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#cdd5fe",
+      "key": "{blue.100}"
+    },
+    "name": "blue100",
+    "attributes": {
+      "category": "blue",
+      "type": "100"
+    },
+    "path": [
+      "blue",
+      "100"
+    ]
+  },
+  {
+    "key": "{blue.300}",
+    "$type": "color",
+    "$value": "Color(0xff6a82fb)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#6a82fb",
+      "key": "{blue.300}"
+    },
+    "name": "blue300",
+    "attributes": {
+      "category": "blue",
+      "type": "300"
+    },
+    "path": [
+      "blue",
+      "300"
+    ]
+  },
+  {
+    "key": "{blue.500}",
+    "$type": "color",
+    "$value": "Color(0xff3858fa)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#3858fa",
+      "key": "{blue.500}"
+    },
+    "name": "blue500",
+    "attributes": {
+      "category": "blue",
+      "type": "500"
+    },
+    "path": [
+      "blue",
+      "500"
+    ]
+  },
+  {
+    "key": "{blue.600}",
+    "$type": "color",
+    "$value": "Color(0xff0525c7)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#0525c7",
+      "key": "{blue.600}"
+    },
+    "name": "blue600",
+    "attributes": {
+      "category": "blue",
+      "type": "600"
+    },
+    "path": [
+      "blue",
+      "600"
+    ]
+  },
+  {
+    "key": "{blue.700}",
+    "$type": "color",
+    "$value": "Color(0xff041c95)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#041c95",
+      "key": "{blue.700}"
+    },
+    "name": "blue700",
+    "attributes": {
+      "category": "blue",
+      "type": "700"
+    },
+    "path": [
+      "blue",
+      "700"
+    ]
+  },
+  {
+    "key": "{yellow.50}",
+    "$type": "color",
+    "$value": "Color(0xfffdf7e7)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#fdf7e7",
+      "key": "{yellow.50}"
+    },
+    "name": "yellow50",
+    "attributes": {
+      "category": "yellow",
+      "type": "50"
+    },
+    "path": [
+      "yellow",
+      "50"
+    ]
+  },
+  {
+    "key": "{yellow.100}",
+    "$type": "color",
+    "$value": "Color(0xfffbefce)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#fbefce",
+      "key": "{yellow.100}"
+    },
+    "name": "yellow100",
+    "attributes": {
+      "category": "yellow",
+      "type": "100"
+    },
+    "path": [
+      "yellow",
+      "100"
+    ]
+  },
+  {
+    "key": "{yellow.300}",
+    "$type": "color",
+    "$value": "Color(0xfff8df9e)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#f8df9e",
+      "key": "{yellow.300}"
+    },
+    "name": "yellow300",
+    "attributes": {
+      "category": "yellow",
+      "type": "300"
+    },
+    "path": [
+      "yellow",
+      "300"
+    ]
+  },
+  {
+    "key": "{yellow.500}",
+    "$type": "color",
+    "$value": "Color(0xffedae0c)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#edae0c",
+      "key": "{yellow.500}"
+    },
+    "name": "yellow500",
+    "attributes": {
+      "category": "yellow",
+      "type": "500"
+    },
+    "path": [
+      "yellow",
+      "500"
+    ]
+  },
+  {
+    "key": "{yellow.600}",
+    "$type": "color",
+    "$value": "Color(0xffbe8b0a)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#be8b0a",
+      "key": "{yellow.600}"
+    },
+    "name": "yellow600",
+    "attributes": {
+      "category": "yellow",
+      "type": "600"
+    },
+    "path": [
+      "yellow",
+      "600"
+    ]
+  },
+  {
+    "key": "{yellow.700}",
+    "$type": "color",
+    "$value": "Color(0xff8e6807)",
+    "filePath": "tokens/palette.colors.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "#8e6807",
+      "key": "{yellow.700}"
+    },
+    "name": "yellow700",
+    "attributes": {
+      "category": "yellow",
+      "type": "700"
+    },
+    "path": [
+      "yellow",
+      "700"
+    ]
+  },
+  {
+    "key": "{text.primary}",
+    "$type": "color",
+    "$value": "Color(0xff111b31)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.900}",
+      "key": "{text.primary}"
+    },
+    "name": "textPrimary",
+    "attributes": {
+      "category": "text",
+      "type": "primary"
+    },
+    "path": [
+      "text",
+      "primary"
+    ]
+  },
+  {
+    "key": "{text.secondary}",
+    "$type": "color",
+    "$value": "Color(0xff212e40)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.800}",
+      "key": "{text.secondary}"
+    },
+    "name": "textSecondary",
+    "attributes": {
+      "category": "text",
+      "type": "secondary"
+    },
+    "path": [
+      "text",
+      "secondary"
+    ]
+  },
+  {
+    "key": "{text.tertiary}",
+    "$type": "color",
+    "$value": "Color(0xff4b596d)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.600}",
+      "key": "{text.tertiary}"
+    },
+    "name": "textTertiary",
+    "attributes": {
+      "category": "text",
+      "type": "tertiary"
+    },
+    "path": [
+      "text",
+      "tertiary"
+    ]
+  },
+  {
+    "key": "{text.brand}",
+    "$type": "color",
+    "$value": "Color(0xff6b5ce0)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{brand.purple.500}",
+      "key": "{text.brand}"
+    },
+    "name": "textBrand",
+    "attributes": {
+      "category": "text",
+      "type": "brand"
+    },
+    "path": [
+      "text",
+      "brand"
+    ]
+  },
+  {
+    "key": "{text.error}",
+    "$type": "color",
+    "$value": "Color(0xffd74b41)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{red.500}",
+      "key": "{text.error}"
+    },
+    "name": "textError",
+    "attributes": {
+      "category": "text",
+      "type": "error"
+    },
+    "path": [
+      "text",
+      "error"
+    ]
+  },
+  {
+    "key": "{text.success}",
+    "$type": "color",
+    "$value": "Color(0xff23a959)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{green.500}",
+      "key": "{text.success}"
+    },
+    "name": "textSuccess",
+    "attributes": {
+      "category": "text",
+      "type": "success"
+    },
+    "path": [
+      "text",
+      "success"
+    ]
+  },
+  {
+    "key": "{text.info}",
+    "$type": "color",
+    "$value": "Color(0xff3858fa)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{blue.500}",
+      "key": "{text.info}"
+    },
+    "name": "textInfo",
+    "attributes": {
+      "category": "text",
+      "type": "info"
+    },
+    "path": [
+      "text",
+      "info"
+    ]
+  },
+  {
+    "key": "{text.warning}",
+    "$type": "color",
+    "$value": "Color(0xffed8936)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{orange.500}",
+      "key": "{text.warning}"
+    },
+    "name": "textWarning",
+    "attributes": {
+      "category": "text",
+      "type": "warning"
+    },
+    "path": [
+      "text",
+      "warning"
+    ]
+  },
+  {
+    "key": "{background.white}",
+    "$type": "color",
+    "$value": "Color(0xffffffff)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{white}",
+      "key": "{background.white}"
+    },
+    "name": "backgroundWhite",
+    "attributes": {
+      "category": "background",
+      "type": "white"
+    },
+    "path": [
+      "background",
+      "white"
+    ]
+  },
+  {
+    "key": "{background.light}",
+    "$type": "color",
+    "$value": "Color(0xfff2f4f7)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.50}",
+      "key": "{background.light}"
+    },
+    "name": "backgroundLight",
+    "attributes": {
+      "category": "background",
+      "type": "light"
+    },
+    "path": [
+      "background",
+      "light"
+    ]
+  },
+  {
+    "key": "{background.dark}",
+    "$type": "color",
+    "$value": "Color(0xffe4e7ec)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.100}",
+      "key": "{background.dark}"
+    },
+    "name": "backgroundDark",
+    "attributes": {
+      "category": "background",
+      "type": "dark"
+    },
+    "path": [
+      "background",
+      "dark"
+    ]
+  },
+  {
+    "key": "{background.brand}",
+    "$type": "color",
+    "$value": "Color(0xff6b5ce0)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{brand.purple.500}",
+      "key": "{background.brand}"
+    },
+    "name": "backgroundBrand",
+    "attributes": {
+      "category": "background",
+      "type": "brand"
+    },
+    "path": [
+      "background",
+      "brand"
+    ]
+  },
+  {
+    "key": "{background.error}",
+    "$type": "color",
+    "$value": "Color(0xffd74b41)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{red.500}",
+      "key": "{background.error}"
+    },
+    "name": "backgroundError",
+    "attributes": {
+      "category": "background",
+      "type": "error"
+    },
+    "path": [
+      "background",
+      "error"
+    ]
+  },
+  {
+    "key": "{background.success}",
+    "$type": "color",
+    "$value": "Color(0xff23a959)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{green.500}",
+      "key": "{background.success}"
+    },
+    "name": "backgroundSuccess",
+    "attributes": {
+      "category": "background",
+      "type": "success"
+    },
+    "path": [
+      "background",
+      "success"
+    ]
+  },
+  {
+    "key": "{background.info}",
+    "$type": "color",
+    "$value": "Color(0xff3858fa)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{blue.500}",
+      "key": "{background.info}"
+    },
+    "name": "backgroundInfo",
+    "attributes": {
+      "category": "background",
+      "type": "info"
+    },
+    "path": [
+      "background",
+      "info"
+    ]
+  },
+  {
+    "key": "{background.warning}",
+    "$type": "color",
+    "$value": "Color(0xffed8936)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{orange.500}",
+      "key": "{background.warning}"
+    },
+    "name": "backgroundWarning",
+    "attributes": {
+      "category": "background",
+      "type": "warning"
+    },
+    "path": [
+      "background",
+      "warning"
+    ]
+  },
+  {
+    "key": "{border.light}",
+    "$type": "color",
+    "$value": "Color(0xffe4e7ec)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.100}",
+      "key": "{border.light}"
+    },
+    "name": "borderLight",
+    "attributes": {
+      "category": "border",
+      "type": "light"
+    },
+    "path": [
+      "border",
+      "light"
+    ]
+  },
+  {
+    "key": "{border.neutral}",
+    "$type": "color",
+    "$value": "Color(0xffd9dde3)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.200}",
+      "key": "{border.neutral}"
+    },
+    "name": "borderNeutral",
+    "attributes": {
+      "category": "border",
+      "type": "neutral"
+    },
+    "path": [
+      "border",
+      "neutral"
+    ]
+  },
+  {
+    "key": "{border.dark}",
+    "$type": "color",
+    "$value": "Color(0xffbec5d0)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{neutrals.300}",
+      "key": "{border.dark}"
+    },
+    "name": "borderDark",
+    "attributes": {
+      "category": "border",
+      "type": "dark"
+    },
+    "path": [
+      "border",
+      "dark"
+    ]
+  },
+  {
+    "key": "{border.brand}",
+    "$type": "color",
+    "$value": "Color(0xff6b5ce0)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{brand.purple.500}",
+      "key": "{border.brand}"
+    },
+    "name": "borderBrand",
+    "attributes": {
+      "category": "border",
+      "type": "brand"
+    },
+    "path": [
+      "border",
+      "brand"
+    ]
+  },
+  {
+    "key": "{border.error}",
+    "$type": "color",
+    "$value": "Color(0xffd74b41)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{red.500}",
+      "key": "{border.error}"
+    },
+    "name": "borderError",
+    "attributes": {
+      "category": "border",
+      "type": "error"
+    },
+    "path": [
+      "border",
+      "error"
+    ]
+  },
+  {
+    "key": "{border.success}",
+    "$type": "color",
+    "$value": "Color(0xff23a959)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{green.500}",
+      "key": "{border.success}"
+    },
+    "name": "borderSuccess",
+    "attributes": {
+      "category": "border",
+      "type": "success"
+    },
+    "path": [
+      "border",
+      "success"
+    ]
+  },
+  {
+    "key": "{border.info}",
+    "$type": "color",
+    "$value": "Color(0xff3858fa)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{blue.500}",
+      "key": "{border.info}"
+    },
+    "name": "borderInfo",
+    "attributes": {
+      "category": "border",
+      "type": "info"
+    },
+    "path": [
+      "border",
+      "info"
+    ]
+  },
+  {
+    "key": "{border.warning}",
+    "$type": "color",
+    "$value": "Color(0xffed8936)",
+    "filePath": "tokens/tokens.semantic.json",
+    "isSource": true,
+    "original": {
+      "$type": "color",
+      "$value": "{orange.500}",
+      "key": "{border.warning}"
+    },
+    "name": "borderWarning",
+    "attributes": {
+      "category": "border",
+      "type": "warning"
+    },
+    "path": [
+      "border",
+      "warning"
+    ]
+  }
+]

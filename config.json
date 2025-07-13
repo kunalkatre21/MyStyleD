@@ -1,14 +1,15 @@
 {
-  "source": ["tokens/**/*.json"],
-  "action": {
-    "colorsets": "require[src/colorset-action]"
-  },
+  "source": [
+    "tokens/palette.colors.json",
+    "tokens/tokens.semantic.json",
+    "tokens/theme.material.json"
+  ],
   "platforms": {
     "ios-colorsets": {
-      "transformGroup": "ios",
       "buildPath": "build/ios-colorsets/",
       "transforms": ["attribute/cti", "name/pascal", "attribute/color"],
       "files": [],
+      "filter": "isNotThemeToken",
       "actions": ["ios-colorsets"]
     },
     "css": {
@@ -36,19 +37,17 @@
       ]
     },
     "compose": {
-      "transformGroup": "compose",
+      "transforms": ["attribute/cti", "name/cti/camel", "color/compose", "size/dp"],
       "buildPath": "build/compose/",
       "files": [
         {
           "destination": "StyleDictionaryColor.kt",
-          "format": "compose/object",
+          "format": "compose/object-with-references",
           "options": {
             "className": "StyleDictionaryColor",
             "packageName": "StyleDictionaryColor"
           },
-          "filter": {
-            "$type": "color"
-          }
+          "filter": "isNotThemeToken"
         },
         {
           "destination": "StyleDictionarySize.kt",
@@ -61,6 +60,13 @@
           "filter": {
             "$type": "dimension"
           }
+        },
+        {
+          "destination": "AppColorScheme.kt",
+          "format": "compose/material-scheme",
+          "filter": {
+          "$type": "color"
+        }
         }
       ]
     },
