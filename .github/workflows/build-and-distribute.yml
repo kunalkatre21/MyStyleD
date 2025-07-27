@@ -113,8 +113,11 @@ jobs:
           git status
           echo "-----------------------------"
 
-          if git diff --quiet && git diff --cached --quiet; then
-            echo "ℹ️ No changes were detected by git. The script will now stop for this repository."
+                    # --- FINAL, ROBUST CHANGE DETECTION ---
+          # 'git status --porcelain' will be empty if there are no changes (staged or unstaged).
+          # This reliably detects new files, modified files, and deleted files.
+          if [[ -z $(git status --porcelain) ]]; then
+            echo "✅ Git working directory is clean. No changes to commit."
           else
             echo "📝 Changes detected, creating PR..."
             # Configure git user for the commit
