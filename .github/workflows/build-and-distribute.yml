@@ -3,7 +3,12 @@ name: Build and Distribute Tokens
 on:
   push:
     branches: [ main ]
-    paths: [ 'tokens/**' ]
+    paths:
+      - 'tokens/**'       # Run if any token file changes
+      - 'build.js'        # Run if the main build script changes
+      - 'config.js'       # Run if the configuration changes
+      - 'src/**'          # Run if any custom formatters/actions change
+      - '.github/workflows/build-and-distribute.yml' # It's good practice to run the workflow if it itself changes
 
 jobs:
   build-and-distribute:
