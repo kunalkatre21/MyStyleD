@@ -4019,7 +4019,7 @@
       }
     }
   },
-  "iOS/doctor-light": {
+  "iOS/mapping": {
     "Labels": {
       "Secondary": {
         "$type": "color",
@@ -4278,7 +4278,7 @@
   "App Icon Modes/Value": {
     "Mode": {
       "$type": "text",
-      "$value": "Dark"
+      "$value": "Light"
     }
   },
   "$themes": [],
@@ -4298,7 +4298,7 @@
       "Font theme/Wireframe",
       "Typescale/Baseline",
       "Shape/Baseline",
-      "iOS/doctor-light",
+      "iOS/mapping",
       "App Icon Modes/Value"
     ]
   }
