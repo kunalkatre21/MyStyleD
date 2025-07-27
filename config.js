@@ -1,44 +1,44 @@
 // config.js
 
-const StyleDictionary = require('style-dictionary').default;
 const { isNotThemeToken, isThemeToken } = require('./src/filter.js');
 
-// --- 1. Register our actors. The resolver has been honorably discharged. ---
-console.log("Rehearsal is over. Registering the final cast.");
-StyleDictionary.registerAction(require('./src/colorset-action.js'));
-StyleDictionary.registerFormat(require('./src/compose-material-scheme.js'));
-StyleDictionary.registerFormat(require('./src/compose-object-with-references.js'));
-StyleDictionary.registerFormat(require('./src/swift-uifont-formatter.js'));
-StyleDictionary.registerFilter({ name: 'isNotThemeToken', filter: isNotThemeToken });
-StyleDictionary.registerFilter({ name: 'isThemeToken', filter: isThemeToken });
-StyleDictionary.registerFilter({ name: 'isNonThemeColor', filter: (token) => isNotThemeToken(token) && token.$type === 'color' });
-StyleDictionary.registerFilter({ name: 'isTypography', filter: (token) => token.$type === 'typography' });
-StyleDictionary.registerFilter({ name: 'isDimension', filter: (token) => token.$type === 'dimension' });
-StyleDictionary.registerFilter({ name: 'isColor', filter: (token) => token.$type === 'color' });
-console.log("The stage is set for the final performance.");
+/**
+ * This function registers all your custom actions, formats, and filters.
+ * It will be called from build.js after StyleDictionary is imported asynchronously.
+ */
+function registerCustomCode(StyleDictionary) {
+  console.log("Rehearsal is over. Registering the final cast.");
+  StyleDictionary.registerAction(require('./src/colorset-action.js'));
+  StyleDictionary.registerFormat(require('./src/compose-material-scheme.js'));
+  StyleDictionary.registerFormat(require('./src/compose-object-with-references.js'));
+  StyleDictionary.registerFormat(require('./src/swift-uifont-formatter.js'));
+  StyleDictionary.registerFilter({ name: 'isNotThemeToken', filter: isNotThemeToken });
+  StyleDictionary.registerFilter({ name: 'isThemeToken', filter: isThemeToken });
+  StyleDictionary.registerFilter({ name: 'isNonThemeColor', filter: (token) => isNotThemeToken(token) && token.$type === 'color' });
+  StyleDictionary.registerFilter({ name: 'isTypography', filter: (token) => token.$type === 'typography' });
+  StyleDictionary.registerFilter({ name: 'isDimension', filter: (token) => token.$type === 'dimension' });
+  StyleDictionary.registerFilter({ name: 'isColor', filter: (token) => token.$type === 'color' });
+  console.log("The stage is set for the final performance.");
+}
 
-module.exports = {
+/**
+ * This is the main configuration object for Style Dictionary.
+ */
+const config = {
   log: { verbosity: 'verbose' },
 
-  // This 'source' array is now only used by our script in build.js
   source: [
     "tokens/colors.json",
     "tokens/m3.json",
     "tokens/ios.json"
   ],
 
-  // --- PARSER REMOVED ---
-  // The unification is now handled in build.js before Style Dictionary runs.
-  parsers: undefined,
-
-  // The platforms no longer need special configuration.
-  // They will receive a unified dictionary where all references work perfectly.
   platforms: {
     "ios-colorsets": {
       "buildPath": "build/ios-colorsets/",
       "transforms": ["attribute/cti", "name/pascal", "attribute/color"],
       "files": [], 
-      "filter": "isThemeToken",
+      "filter": "isColor", // Changed from isThemeToken to isColor to ensure all colors are processed
       "actions": ["ios-colorsets"]
     },
     "ios-swift-typography": {
@@ -94,3 +94,5 @@ module.exports = {
     }
   }
 };
+
+module.exports = { registerCustomCode, config };

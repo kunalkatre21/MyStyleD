@@ -56,23 +56,15 @@ jobs:
         BRANCH_NAME="tokens/update-$(date +%Y%m%d-%H%M%S)"
         git checkout -b $BRANCH_NAME
         
-        # Corrected file copying logic
-        if [[ "$TARGET_REPO" == "kunalkatre21/web-app" ]]; then
-          echo "Copying web tokens..."
+        # Copy built files based on repository configuration
+        if [[ "$TARGET_REPO" == *"frontend"* ]]; then
           mkdir -p src/styles/tokens
           cp -r ../build/css/* src/styles/tokens/ 2>/dev/null || true
-        
-        elif [[ "$TARGET_REPO" == "kunalkatre21/android-app" ]]; then
-          echo "Copying Android tokens..."
+          cp -r ../build/js/* src/styles/tokens/ 2>/dev/null || true
+        elif [[ "$TARGET_REPO" == *"mobile"* ]]; then
           mkdir -p assets/design-tokens
           cp -r ../build/compose/* assets/design-tokens/ 2>/dev/null || true
           cp -r ../build/android/* assets/design-tokens/ 2>/dev/null || true
-          
-        elif [[ "$TARGET_REPO" == "kunalkatre21/ios-app" ]]; then
-          echo "Copying iOS tokens..."
-          mkdir -p assets/design-tokens
-          cp -r ../build/ios-swift/* assets/design-tokens/ 2>/dev/null || true
-          cp -r ../build/ios-colorsets/* assets/design-tokens/ 2>/dev/null || true
         fi
         
         # Check for changes
@@ -81,7 +73,7 @@ jobs:
         else
           echo "📝 Changes detected, creating PR..."
           
-          # Commit and create Pull Request (your existing logic is great)
+          # Commit changes
           git add .
           git commit -m "feat: update design tokens
 
@@ -90,8 +82,10 @@ jobs:
           - Updated Compose color schemes
           - Synchronized with latest Figma designs"
           
+          # Push branch
           git push origin $BRANCH_NAME
           
+          # Create pull request
           gh pr create \
             --title "🎨 Update Design Tokens" \
             --body "## Design Token Update

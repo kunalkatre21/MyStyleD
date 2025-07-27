@@ -1,11 +1,10 @@
 // build.js
 
-const StyleDictionary = require('style-dictionary').default;
 const fs = require('fs');
 const deepmerge = require('deepmerge');
 
 // When this line runs, Node executes config.js, registering all our code.
-const config = require('./config.js');
+const { registerCustomCode, config } = require('./config.js');
 
 /**
  * The Unifier.
