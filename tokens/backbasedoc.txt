@@ -1,4 +1,4 @@
-
+// <time_pass>
 import { TokenFile } from '../types';
 
 export const lightThemeTokens: TokenFile = {
