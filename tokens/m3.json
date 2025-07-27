@@ -890,7 +890,7 @@
     "Add-ons": {
       "Section background": {
         "$type": "color",
-        "$value": "{Neutrals.50-BGlight}"
+        "$value": "#bbb7bf29"
       }
     }
   },

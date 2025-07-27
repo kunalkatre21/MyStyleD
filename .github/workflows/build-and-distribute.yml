@@ -1,0 +1,108 @@
+name: Build and Distribute Tokens
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'tokens/**' ]
+
+jobs:
+  build-and-distribute:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        target-repo: 
+          - kunalkatre21/web-app
+          - kunalkatre21/android-app
+          - kunalkatre21/ios-app
+          # Add more repositories as needed
+    
+    steps:
+    - name: Checkout Style Dictionary repo
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build tokens
+      run: npm run build
+    
+    - name: Process repository ${{ matrix.target-repo }}
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        TARGET_REPO: ${{ matrix.target-repo }}
+      run: |
+        set -e
+        
+        echo "🚀 Processing repository: $TARGET_REPO"
+        
+        # Install GitHub CLI
+        gh --version || (curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg && \
+        sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg && \
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null && \
+        sudo apt update && sudo apt install gh -y)
+        
+        # Clone target repository
+        gh repo clone $TARGET_REPO temp-repo
+        cd temp-repo
+        
+        # Create feature branch
+        BRANCH_NAME="tokens/update-$(date +%Y%m%d-%H%M%S)"
+        git checkout -b $BRANCH_NAME
+        
+        # Copy built files based on repository configuration
+        if [[ "$TARGET_REPO" == *"frontend"* ]]; then
+          mkdir -p src/styles/tokens
+          cp -r ../build/css/* src/styles/tokens/ 2>/dev/null || true
+          cp -r ../build/js/* src/styles/tokens/ 2>/dev/null || true
+        elif [[ "$TARGET_REPO" == *"mobile"* ]]; then
+          mkdir -p assets/design-tokens
+          cp -r ../build/compose/* assets/design-tokens/ 2>/dev/null || true
+          cp -r ../build/android/* assets/design-tokens/ 2>/dev/null || true
+        fi
+        
+        # Check for changes
+        if git diff --quiet && git diff --cached --quiet; then
+          echo "ℹ️ No changes detected in $TARGET_REPO"
+        else
+          echo "📝 Changes detected, creating PR..."
+          
+          # Commit changes
+          git add .
+          git commit -m "feat: update design tokens
+
+          Auto-generated token update from Style Dictionary
+          - Updated CSS variables and JavaScript tokens
+          - Updated Compose color schemes
+          - Synchronized with latest Figma designs"
+          
+          # Push branch
+          git push origin $BRANCH_NAME
+          
+          # Create pull request
+          gh pr create \
+            --title "🎨 Update Design Tokens" \
+            --body "## Design Token Update
+          
+          Automated design token update from Style Dictionary repository.
+          
+          ### Changes Include:
+          - Updated design tokens from Figma
+          - Synchronized color schemes and typography
+          - Updated component tokens
+          
+          **Source:** [Style Dictionary Build](https://github.com/kunalkatre21/MyStyleD/actions)" \
+            --base main \
+            --head $BRANCH_NAME
+          
+          echo "✅ PR created successfully for $TARGET_REPO"
+        fi
+        
+        cd ..
+        rm -rf temp-repo

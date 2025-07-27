@@ -1,5 +1,5 @@
 {
-  "primitive/primitive": {
+  "primitive/Value": {
     "color": {
       "neutral": {
         "100": {
@@ -42,15 +42,15 @@
       "primary": {
         "100": {
           "$type": "color",
-          "$value": "#eaf0ff"
+          "$value": "#e4e1fa"
         },
         "500": {
           "$type": "color",
-          "$value": "#3a6cde"
+          "$value": "#6b5ce0"
         },
         "700": {
           "$type": "color",
-          "$value": "#1e47a5"
+          "$value": "#271b7e"
         }
       },
       "danger": {
@@ -103,6 +103,10 @@
         "500": {
           "$type": "color",
           "$value": "#026aa2"
+        },
+        "700": {
+          "$type": "color",
+          "$value": "#025582"
         }
       }
     },
@@ -219,7 +223,7 @@
       }
     }
   },
-  "semantic/semantic": {
+  "semantic/Value": {
     "color": {
       "background": {
         "surface": {
@@ -373,7 +377,7 @@
       }
     }
   },
-  "component/component": {
+  "component/Value": {
     "button": {
       "primary": {
         "background-color": {
@@ -516,9 +520,9 @@
   "$themes": [],
   "$metadata": {
     "tokenSetOrder": [
-      "primitive/primitive",
-      "semantic/semantic",
-      "component/component"
+      "primitive/Value",
+      "semantic/Value",
+      "component/Value"
     ]
   }
 }

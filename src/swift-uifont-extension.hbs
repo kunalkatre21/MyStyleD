@@ -1,0 +1,19 @@
+// src/swift-uifont-extension.hbs
+
+import UIKit
+
+// This file is auto-generated from a design token JSON file.
+// Do not edit directly, this file is generated from the design tokens.
+// It uses UIFontMetrics to support Dynamic Type.
+
+public extension UIFont {
+{{#each fonts}}
+    /// Dynamic Type style: `{{this.style}}`. Base size: {{this.size}}pt, weight: `{{this.weight}}`.
+    static var {{this.name}}: UIFont {
+        // Assumes an `appFont(weight:size:)` helper function exists to load your custom font.
+        let font = appFont(weight: .{{this.weight}}, size: {{this.size}})
+        let metrics = UIFontMetrics(forTextStyle: .{{this.style}})
+        return metrics.scaledFont(for: font)
+    }
+{{/each}}
+}

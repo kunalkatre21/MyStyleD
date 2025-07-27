@@ -1,0 +1,23 @@
+{
+    "repositories": [
+      {
+        "name": "kunalkatre21/web-app",
+        "targetPath": "src/styles/tokens",
+        "fileTypes": ["css", "js"],
+        "branch": "main"
+      },
+      {
+        "name": "kunalkatre21/android-app", 
+        "targetPath": "assets/design-tokens",
+        "fileTypes": ["js", "compose"],
+        "branch": "main"
+      },
+      {
+        "name": "kunalkatre21/ios-app", 
+        "targetPath": "assets/design-tokens",
+        "fileTypes": ["swift", "colorset"],
+        "branch": "main"
+      }
+    ]
+  }
+  

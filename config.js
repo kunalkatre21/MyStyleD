@@ -1,124 +1,96 @@
+// config.js
+
+const StyleDictionary = require('style-dictionary').default;
+const { isNotThemeToken, isThemeToken } = require('./src/filter.js');
+
+// --- 1. Register our actors. The resolver has been honorably discharged. ---
+console.log("Rehearsal is over. Registering the final cast.");
+StyleDictionary.registerAction(require('./src/colorset-action.js'));
+StyleDictionary.registerFormat(require('./src/compose-material-scheme.js'));
+StyleDictionary.registerFormat(require('./src/compose-object-with-references.js'));
+StyleDictionary.registerFormat(require('./src/swift-uifont-formatter.js'));
+StyleDictionary.registerFilter({ name: 'isNotThemeToken', filter: isNotThemeToken });
+StyleDictionary.registerFilter({ name: 'isThemeToken', filter: isThemeToken });
+StyleDictionary.registerFilter({ name: 'isNonThemeColor', filter: (token) => isNotThemeToken(token) && token.$type === 'color' });
+StyleDictionary.registerFilter({ name: 'isTypography', filter: (token) => token.$type === 'typography' });
+StyleDictionary.registerFilter({ name: 'isDimension', filter: (token) => token.$type === 'dimension' });
+StyleDictionary.registerFilter({ name: 'isColor', filter: (token) => token.$type === 'color' });
+console.log("The stage is set for the final performance.");
+
 module.exports = {
-  // 1. The source array is now inside the JS object.
+  log: { verbosity: 'verbose' },
+
+  // This 'source' array is now only used by our script in build.js
   source: [
-    "tokens/palette.colors.json",
-    "tokens/tokens.semantic.json",
-    "tokens/theme.material.json"
+    "tokens/colors.json",
+    "tokens/m3.json",
+    "tokens/ios.json"
   ],
 
-  // 2. The platforms object, now with working filter functions.
+  // --- PARSER REMOVED ---
+  // The unification is now handled in build.js before Style Dictionary runs.
+  parsers: undefined,
+
+  // The platforms no longer need special configuration.
+  // They will receive a unified dictionary where all references work perfectly.
   platforms: {
-    // "compose": {
-    //   "transformGroup": "compose",
-    //   "buildPath": "build/compose/",
-    //   "files": [
-    //     {
-    //       "destination": "StyleDictionaryColor.kt",
-    //       "format": "compose/object",
-    //       "transformGroup": "compose",
-    //       "options": {
-    //         "className": "StyleDictionaryColor",
-    //         "packageName": "StyleDictionaryColor"
-    //       },
-    //       // This filter now works because we are in a .js file.
-    //       "filter": (token) => 
-    //         token.path[0] !== 'Schemes' && token.path[0] !== 'State Layers' && token.path[0] !== 'Add-ons'
-    //     },
-    //     {
-    //       "destination": "AppColorScheme.kt",
-    //       "format": "compose/material-scheme",
-    //       "transforms": ["attribute/cti", "color/composeColor"],
-    //       // This filter also works now.
-    //       "filter": (token) => token.path[0] === 'Schemes'
-    //     }
-    //   ]
-    // },
-    // The rest of your platforms, copied exactly from before.
+    "ios-colorsets": {
+      "buildPath": "build/ios-colorsets/",
+      "transforms": ["attribute/cti", "name/pascal", "attribute/color"],
+      "files": [], 
+      "filter": "isThemeToken",
+      "actions": ["ios-colorsets"]
+    },
+    "ios-swift-typography": {
+      "transforms": ["attribute/cti", "name/camel"],
+      "buildPath": "build/ios-swift/",
+      "files": [{
+        "destination": "UIFont+AppStyles.swift",
+        "format": "swift/uifont-extension",
+        "filter": "isTypography",
+        "options": { "className": "AppTypography" }
+      }]
+    },
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "build/css/",
+      "files": [{
+        "destination": "_variables.css",
+        "format": "css/variables",
+        "filter": "isNotThemeToken"
+      }]
+    },
+    "android": {
+      "transformGroup": "android",
+      "buildPath": "build/android/",
+      "files": [
+        { "destination": "font_dimens.xml", "format": "android/fontDimens", "filter": "isDimension" },
+        { "destination": "colors.xml", "format": "android/colors", "filter": "isColor" }
+      ]
+    },
     "compose": {
-      "transformGroup": "compose",
+      "transforms": ["attribute/color", "name/camel", "color/composeColor"],
       "buildPath": "build/compose/",
-      // Custom options to be used in the material-scheme 
-      "format": {
-        "className": "StyleDictionaryColor",
-        "packageName": "StyleDictionaryColor"
-      },
       "files": [
         {
           "destination": "StyleDictionaryColor.kt",
-          "format": "compose/object",
-          "options": {
-            "className": "StyleDictionaryColor",
-            "packageName": "StyleDictionaryColor"
-          },
-          "filter": "isNotThemeToken"
+          "format": "compose/object-with-references",
+          "options": { "className": "StyleDictionaryColor", "packageName": "com.eka.ui.theme" },
+          "filter": "isNonThemeColor"
         },
         {
           "destination": "StyleDictionarySize.kt",
           "format": "compose/object",
-          "options": {
-            "className": "StyleDictionarySize",
-            "packageName": "StyleDictionarySize",
-            "type": "float"
-          },
-          "filter": {
-            "$type": "dimension"
-          }
+          "options": { "className": "StyleDictionarySize", "packageName": "StyleDictionarySize", "type": "float" },
+          "filter": "isDimension"
         },
         {
           "destination": "AppColorScheme.kt",
           "format": "compose/material-scheme",
-          "options": {
-            "packageName": "com.yourcompany.designsystem.theme",
-            "className": "AppColorScheme"
-          },
-          "filter": "isThemeToken" // Use the specific filter here!
+          "options": { "className": "AppColorScheme", "packageName": "com.eka.ui.theme" },
+          "filter": "isColor"
         }
       ]
-    },
-    "ios-colorsets": {
-        "transformGroup": "ios",
-        "buildPath": "build/ios-colorsets/",
-        "transforms": ["attribute/cti", "name/pascal", "color/rgb"],
-        "files": [],
-        "actions": ["ios-colorsets"]
-    },
-    "css": {
-        "transformGroup": "css",
-        "buildPath": "build/css/",
-        "files": [{ "destination": "_variables.css", "format": "css/variables" }]
-    },
-    "android": {
-        "transformGroup": "android",
-        "buildPath": "build/android/",
-        "files": [
-            { "destination": "font_dimens.xml", "format": "android/fontDimens" },
-            { "destination": "colors.xml", "format": "android/colors" }
-        ]
-    },
-    "ios": {
-        "transformGroup": "ios",
-        "buildPath": "build/ios/",
-        "files": [
-            { "destination": "StyleDictionaryColor.h", "format": "ios/colors.h", "className": "StyleDictionaryColor", "type": "StyleDictionaryColorName", "filter": { "$type": "color" }},
-            { "destination": "StyleDictionaryColor.m", "format": "ios/colors.m", "className": "StyleDictionaryColor", "type": "StyleDictionaryColorName", "filter": { "$type": "color" }}
-        ]
-    },
-    "ios-swift": {
-        "transformGroup": "ios-swift",
-        "buildPath": "build/ios-swift/",
-        "files": [
-            { "destination": "StyleDictionary+Class.swift", "format": "ios-swift/class.swift", "className": "StyleDictionaryClass" },
-            { "destination": "StyleDictionary+Enum.swift", "format": "ios-swift/enum.swift", "className": "StyleDictionaryEnum" },
-            { "destination": "StyleDictionary+Struct.swift", "format": "ios-swift/any.swift", "className": "StyleDictionaryStruct", "imports": "SwiftUI", "objectType": "struct", "accessControl": "internal" }
-        ]
-    },
-    "ios-swift-separate-enums": {
-        "transformGroup": "ios-swift-separate",
-        "buildPath": "build/ios-swift/",
-        "files": [
-            { "destination": "StyleDictionaryColor.swift", "format": "ios-swift/enum.swift", "className": "StyleDictionaryColor", "filter": { "$type": "color" }},
-            { "destination": "StyleDictionarySize.swift", "format": "ios-swift/enum.swift", "className": "StyleDictionarySize", "filter": { "$type": "dimension" }}
-        ]
     }
   }
 };

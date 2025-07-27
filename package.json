@@ -2,9 +2,11 @@
     "name": "my-design-system",
     "version": "1.0.0",
     "scripts": {
-        "build": "node build.js"
+        "build": "node build.js",
+        "test": "npm run build"
     },
     "dependencies": {
+        "deepmerge": "^4.3.1",
         "style-dictionary": "^5.0.1"
     },
     "description": "",
@@ -20,5 +22,8 @@
     "bugs": {
         "url": "https://github.com/kunalkatre21/MyStyleD/issues"
     },
-    "homepage": "https://github.com/kunalkatre21/MyStyleD#readme"
+    "homepage": "https://github.com/kunalkatre21/MyStyleD#readme",
+    "devDependencies": {
+        "handlebars": "^4.7.8"
+    }
 }

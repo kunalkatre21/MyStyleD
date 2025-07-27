@@ -1,75 +1,149 @@
 // src/compose-material-scheme.js
 
-/**
- * Converts a string to camelCase.
- * e.g., "On Primary Container" -> "onPrimaryContainer"
- */
 function toCamelCase(str) {
-  return str.replace(/[-_]/g, ' ').split(' ').map((word, index) => {
-    if (index === 0) return word.toLowerCase();
-    const lowerWord = word.toLowerCase();
-    return lowerWord.charAt(0).toUpperCase() + lowerWord.slice(1);
-  }).join('');
+  return str.replace(/[-_\s]+/g, ' ')
+      .split(' ')
+      .map((word, index) => {
+          if (index === 0) return word.toLowerCase();
+          return word.charAt(0).toUpperCase() + word.toLowerCase().slice(1);
+      })
+      .join('');
+}
+
+function resolveAlias(alias, allTokens) {
+  if (!alias || !alias.startsWith('{') || !alias.endsWith('}')) {
+      return null;
+  }
+  
+  // Remove braces and split the path
+  const aliasPath = alias.slice(1, -1).split('.');
+  
+  // Find token by matching the path segments
+  return allTokens.find(token => {
+      const tokenPath = token.path || [];
+      if (tokenPath.length !== aliasPath.length) {
+          return false;
+      }
+      return tokenPath.every((segment, i) => {
+          // Handle kebab-case to camelCase conversion in paths
+          const normalizedSegment = segment.replace(/-/g, '');
+          const normalizedAlias = aliasPath[i].replace(/-/g, '');
+          return normalizedSegment.toLowerCase() === normalizedAlias.toLowerCase();
+      });
+  });
 }
 
 module.exports = {
   name: 'compose/material-scheme',
   format: function({ dictionary, file }) {
-    const allTokens = dictionary.allTokens;
-    const colorObjectName = "StyleDictionaryColor";
-
-    // Filter to get only the tokens that define the roles in our Material scheme.
-    const schemeTokens = allTokens.filter(token =>
-      token.filePath === 'tokens/theme.material.json' && token.path[0] === 'Schemes'
-    );
-
-    const schemeProperties = schemeTokens.map(token => {
-      const materialRole = toCamelCase(token.path[1]);
-
-      // Get the alias from the original, unprocessed token value, e.g., "{brand.purple.500}"
-      const alias = token.original.$value;
-
-      // Ensure it is an alias. If not, it's a hard-coded value we can't look up.
-      if (!alias || !alias.startsWith('{') || !alias.endsWith('}')) {
-        return `    // WARNING: Token "${materialRole}" is not a valid alias. Found value: ${alias}`;
-      }
-
-      // Clean the alias to get the path array, e.g., ['brand', 'purple', '500']
-      const aliasPath = alias.slice(1, -1).split('.');
-
-      // Find the source token by matching its path with the alias path.
-      // This is the most reliable way to link tokens.
-      const referencedToken = allTokens.find(t => {
-        // `t.path` is an array of strings. We compare it to `aliasPath`.
-        if (t.path.length !== aliasPath.length) {
-          return false;
-        }
-        return t.path.every((segment, i) => segment === aliasPath[i]);
+      const allTokens = dictionary.allTokens;
+      const colorObjectName = "StyleDictionaryColor";
+      
+      // console.log('=== MATERIAL SCHEME FORMATTER DEBUG ===');
+      // console.log(`Total tokens: ${allTokens.length}`);
+      
+      // Look for scheme tokens by name pattern instead of file path
+      const schemeTokens = allTokens.filter(token => {
+          const tokenName = (token.name || '').toLowerCase();
+          const hasSchemeInPath = token.path && token.path.some(p => 
+              p.toLowerCase().includes('scheme') || p === 'M3'
+          );
+          
+          // Look for Material 3 role names in token names
+          const materialRoles = [
+              'primary', 'surface', 'secondary', 'tertiary', 'error', 
+              'background', 'outline', 'shadow', 'scrim', 'inverse'
+          ];
+          
+          const hasRoleInName = materialRoles.some(role => 
+              tokenName.includes(role.toLowerCase())
+          );
+          
+          return hasSchemeInPath && hasRoleInName && token.original && 
+                 token.original.$value && token.original.$value.startsWith('{');
       });
-
-      if (referencedToken) {
-        // Success! We found the exact source token.
-        // The 'compose/object' format uses camelCase names by default.
-        // The default 'name/cti/pascal' transform creates PascalCase, so we convert it.
-        const tokenName = referencedToken.name;
-        const colorReferenceName = tokenName.charAt(0).toLowerCase() + tokenName.slice(1);
-
-        return `    ${materialRole} = ${colorObjectName}.${colorReferenceName}`;
-      } else {
-        // This is a critical warning: the alias in your theme file points to nothing.
-        return `    // ERROR: Could not resolve alias "${alias}" for role "${materialRole}"`;
+      
+      // console.log(`Found ${schemeTokens.length} potential scheme tokens`);
+      
+      // If we still don't find them, look at the token structure more broadly
+      if (schemeTokens.length === 0) {
+          // console.log('No scheme tokens found, checking token structure...');
+          
+          // Look for any tokens that reference color aliases
+          const aliasTokens = allTokens.filter(token => 
+              token.original && token.original.$value && 
+              token.original.$value.startsWith('{color.')
+          );
+          
+          // console.log(`Found ${aliasTokens.length} tokens with color aliases`);
+          
+          // Show a few examples
+          aliasTokens.slice(0, 5).forEach(token => {
+              // console.log(`Alias token: "${token.name}" -> ${token.original.$value}`);
+              // console.log(`  Path: [${token.path ? token.path.join(', ') : 'undefined'}]`);
+          });
       }
-    }).join(',\n');
-
-    const packageName = file.options?.packageName || 'com.yourcompany.designsystem';
-    const className = file.options?.className || 'AppColorScheme';
-
-    return `// Do not edit directly, this file was auto-generated from Style Dictionary.
+      
+      const schemeProperties = schemeTokens.map(token => {
+          // Extract Material role from token name
+          let roleName = token.name;
+          
+          // Convert schemes-prefixed names to camelCase roles
+          if (roleName.toLowerCase().startsWith('schemes')) {
+              roleName = roleName.replace(/^schemes/i, '');
+          }
+          
+          const materialRole = toCamelCase(roleName);
+          
+          // Get the original alias value
+          const alias = token.original.$value;
+          
+          // console.log(`Processing: ${token.name} -> ${materialRole} (alias: ${alias})`);
+          
+          if (!alias || !alias.startsWith('{') || !alias.endsWith('}')) {
+              return `    // WARNING: Token "${materialRole}" is not a valid alias. Found value: ${alias}`;
+          }
+          
+          // Resolve the alias to find the referenced token
+          const referencedToken = resolveAlias(alias, allTokens);
+          
+          if (referencedToken) {
+              // Convert the referenced token name to camelCase for the color object
+              const colorReferenceName = referencedToken.name;
+              
+              // console.log(`✅ Mapped ${materialRole} -> ${colorObjectName}.${colorReferenceName}`);
+              return `    ${materialRole} = ${colorObjectName}.${colorReferenceName}`;
+          } else {
+              console.warn(`❌ Could not resolve alias "${alias}" for role "${materialRole}"`);
+              return `    // ERROR: Could not resolve alias "${alias}" for role "${materialRole}"`;
+          }
+      }).join(',\n');
+      
+      // console.log('=== END MATERIAL SCHEME DEBUG ===');
+      
+      const packageName = file.options?.packageName || 'com.eka.ui.theme';
+      const className = file.options?.className || 'AppColorScheme';
+      
+      if (schemeProperties.trim() === '') {
+          return `// Do not edit directly, this file was auto-generated from Style Dictionary.
 package ${packageName}
 
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
-import ${colorObjectName} // Import the generated color object
+
+val ${className} = lightColorScheme(
+  // No Material scheme tokens found - check debug output above
+  primary = Color.Blue, // Fallback
+  secondary = Color.Green // Fallback  
+)
+`;
+      }
+      
+      return `// Do not edit directly, this file was auto-generated from Style Dictionary.
+package ${packageName}
+
+import androidx.compose.material3.lightColorScheme
+import androidx.compose.ui.graphics.Color
 
 val ${className} = lightColorScheme(
 ${schemeProperties}
