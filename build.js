@@ -1,81 +1,91 @@
 // build.js
 
+// --- LOUDLY ANNOUNCE SCRIPT START ---
+console.log("[LOUDLY] The 'build.js' script has started. The curtain rises!");
+
 const fs = require('fs');
 const deepmerge = require('deepmerge');
 
-// When this line runs, Node executes config.js, registering all our code.
+// --- LOUDLY ANNOUNCE REQUIREMENT OF CONFIG ---
+console.log("[LOUDLY] Loading the 'config.js' module...");
 const { registerCustomCode, config } = require('./config.js');
+console.log("[LOUDLY] 'config.js' has been loaded successfully.");
 
-/**
- * The Unifier.
- * This function reads all token files specified in the config,
- * extracts the actual token sets from within them (e.g., 'primitive/Value'),
- * and merges them all into a single, flat object.
- * This solves all reference errors at the root.
- */
+
 function getUnifiedTokens() {
-    console.log("[Unifier] I have been summoned to unite the token universes.");
+    console.log("[LOUDLY] The Unifier is now at work...");
     
-    // 1. Read the content of every source file.
     const allFileObjects = config.source.map(filePath => {
-        console.log(`  > Reading tokens from: ${filePath}`);
+        console.log(`  > Unifier is reading: ${filePath}`);
         return JSON.parse(fs.readFileSync(filePath, 'utf8'));
     });
 
-    // 2. Extract the token set *objects* from each file.
-    // We use flatMap to create a single array of all the sets from all the files.
     const allTokenSets = allFileObjects.flatMap(fileObject =>
         Object.keys(fileObject)
-            .filter(key => !key.startsWith('$')) // Ignore '$themes' and '$metadata'
-            .map(setKey => fileObject[setKey])   // Get the object for that key
+            .filter(key => !key.startsWith('$'))
+            .map(setKey => fileObject[setKey])
     );
 
-    // 3. Merge all of these token set objects into one giant object.
-    console.log("  > Merging all token sets into a single namespace... The universe is one!");
+    console.log("  > Unifier is merging all token sets...");
     const mergedTokens = deepmerge.all(allTokenSets);
+    console.log("[LOUDLY] The Unifier has finished. The universe is one!");
     
-    // The individual file paths are preserved on each token, so filtering will still work.
     return mergedTokens;
 }
 
-async function run() {
+// --- MAIN EXECUTION WRAPPED IN AN ASYNC IIFE ---
+// This is the correct way to run async code in a CommonJS script.
+(async () => {
     try {
-        console.log("Build process has been initiated...");
+        // --- STEP 1: ASYNCHRONOUSLY IMPORT STYLE DICTIONARY ---
+        console.log("[LOUDLY] Attempting to import 'style-dictionary' module asynchronously...");
+        const styleDictionaryModule = await import('style-dictionary');
+        console.log("[LOUDLY] The 'style-dictionary' module has been imported.");
+        
+        // --- STEP 2: INSPECT AND EXTRACT THE DEFAULT EXPORT ---
+        console.log("[LOUDLY] Inspecting the imported module to find the StyleDictionary class...");
+        const StyleDictionary = styleDictionaryModule.default;
 
-        // 1. Get our single, unified token object.
+        if (!StyleDictionary) {
+            console.error("[LOUDLY] FATAL ERROR: The 'default' export was not found on the imported module!");
+            console.log("[LOUDLY] The imported module looks like this:", styleDictionaryModule);
+            throw new Error("Could not find StyleDictionary.default. The build cannot continue.");
+        }
+        console.log("[LOUDLY] Found the StyleDictionary class successfully!");
+
+        // --- STEP 3: REGISTER OUR CUSTOM CODE ---
+        console.log("[LOUDLY] Handing over to the registration function...");
+        registerCustomCode(StyleDictionary);
+
+        // --- STEP 4: GET THE UNIFIED TOKENS ---
         const unifiedTokens = getUnifiedTokens();
-        // console.log("=== DEBUGGING TYPOGRAPHY TOKENS ===");
-        // Object.keys(unifiedTokens).forEach(key => {
-        //   const token = unifiedTokens[key];
-        //   if (token && typeof token === 'object' && token.$type === 'typography') {
-        //       console.log(`Typography token found at key: ${key}`);
-        //       console.log(`Token structure:`, JSON.stringify(token, null, 2));
-        //   }
-        // });
-        console.log("=== END DEBUGGING ===");
-        // 2. Create a final configuration object.
+
+        // --- STEP 5: PREPARE THE FINAL CONFIGURATION ---
+        console.log("[LOUDLY] Assembling the final configuration object...");
         const finalConfig = {
           ...config,
-          tokens: unifiedTokens, // Use the pre-processed object.
-          source: undefined,     // Nullify the original source array as it's no longer needed.
+          tokens: unifiedTokens, 
+          source: undefined,     
         };
+        console.log("[LOUDLY] Final configuration is ready.");
 
-        // 3. Pass the fully-formed config to the constructor.
-        //    This is the correct way to instantiate Style Dictionary.
+        // --- STEP 6: INSTANTIATE STYLE DICTIONARY ---
+        console.log("[LOUDLY] Now creating a new instance of StyleDictionary. This is the moment of truth...");
         const sd = new StyleDictionary(finalConfig);
+        console.log("[LOUDLY] StyleDictionary instance created successfully!");
 
-        console.log("Building all platforms...");
+        // --- STEP 7: BUILD PLATFORMS ---
+        console.log("[LOUDLY] Instructing Style Dictionary to build all platforms...");
         await sd.buildAllPlatforms();
+        console.log('[LOUDLY] All platforms built.');
 
         console.log('\n==============================================');
         console.log('\nBuild completed successfully! 🎉');
 
     } catch (error) {
         console.log('\n==============================================');
-        console.error('\n❌ Build failed! An error occurred:');
+        console.error('\n❌ Build failed! The show cannot go on:');
         console.error(error);
         process.exit(1);
     }
-}
-
-run();
+})();

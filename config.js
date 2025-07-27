@@ -7,7 +7,15 @@ const { isNotThemeToken, isThemeToken } = require('./src/filter.js');
  * It will be called from build.js after StyleDictionary is imported asynchronously.
  */
 function registerCustomCode(StyleDictionary) {
-  console.log("Rehearsal is over. Registering the final cast.");
+  // --- LOUD CONSOLE ANNOUNCEMENT ---
+  console.log("[LOUDLY] The 'registerCustomCode' function has been called. The director is on set!");
+
+  if (!StyleDictionary) {
+    console.error("[LOUDLY] FATAL ERROR: The StyleDictionary object I received is empty! I cannot register anything.");
+    return;
+  }
+
+  console.log("  > Registering custom actions, formats, and filters...");
   StyleDictionary.registerAction(require('./src/colorset-action.js'));
   StyleDictionary.registerFormat(require('./src/compose-material-scheme.js'));
   StyleDictionary.registerFormat(require('./src/compose-object-with-references.js'));
@@ -18,7 +26,9 @@ function registerCustomCode(StyleDictionary) {
   StyleDictionary.registerFilter({ name: 'isTypography', filter: (token) => token.$type === 'typography' });
   StyleDictionary.registerFilter({ name: 'isDimension', filter: (token) => token.$type === 'dimension' });
   StyleDictionary.registerFilter({ name: 'isColor', filter: (token) => token.$type === 'color' });
-  console.log("The stage is set for the final performance.");
+  
+  // --- LOUD CONSOLE ANNOUNCEMENT ---
+  console.log("[LOUDLY] All custom code has been registered. The cast is ready!");
 }
 
 /**
@@ -38,7 +48,7 @@ const config = {
       "buildPath": "build/ios-colorsets/",
       "transforms": ["attribute/cti", "name/pascal", "attribute/color"],
       "files": [], 
-      "filter": "isColor", // Changed from isThemeToken to isColor to ensure all colors are processed
+      "filter": "isColor",
       "actions": ["ios-colorsets"]
     },
     "ios-swift-typography": {
