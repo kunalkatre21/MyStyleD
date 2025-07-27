@@ -59,6 +59,13 @@ jobs:
         # We still need the code for the distribution script itself
         uses: actions/checkout@v4
 
+      # --- THIS IS THE NEW STEP TO ADD ---
+      - name: Setup Git authentication
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: gh auth setup-git
+      # ------------------------------------
+
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
