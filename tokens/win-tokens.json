@@ -1,0 +1,81 @@
+{
+    "windows": {
+      "mapping": {
+  
+        "typography": {
+          "fontFamilyBase": {
+            "$type": "fontFamily",
+            "$value": "'Inter', 'system-ui', '-apple-system', 'Helvetica Neue', sans-serif",
+
+          },
+          "fontSizeBase": {
+            "$type": "dimension",
+            "$value": "{typography.font.size.s}",
+ 
+          },
+          "fontWeightRegular": {
+            "$type": "fontWeight",
+            "$value": "400"
+          },
+          "fontWeightSemibold": {
+            "$type": "fontWeight",
+            "$value": "600"
+          }
+        },
+  
+        "color": {
+  
+          "colorNeutralBackground1":      { "$type": "color", "$value": "{color.neutral.100}" }, 
+          "colorNeutralBackground2":      { "$type": "color", "$value": "{color.neutral.200}" }, 
+          "colorNeutralBackground3":      { "$type": "color", "$value": "{color.neutral.300}" }, 
+          "colorSubtleBackground":        { "$type": "color", "$value": "{color.neutral.200}" },
+          "colorTransparentBackground":   { "$type": "color", "$value": "transparent" },
+
+          "colorNeutralForeground1":      { "$type": "color", "$value": "{color.neutral.900}" }, 
+          "colorNeutralForeground2":      { "$type": "color", "$value": "{color.neutral.700}" }, 
+          "colorNeutralForegroundDisabled": { "$type": "color", "$value": "{color.neutral.500}" }, 
+  
+          "colorNeutralStroke1":          { "$type": "color", "$value": "{color.neutral.400}" }, 
+          "colorNeutralStroke2":          { "$type": "color", "$value": "{color.neutral.500}" }, 
+          "colorNeutralStrokeAccessible": { "$type": "color", "$value": "{color.neutral.600}" }, 
+          "colorStrokeFocus2":            { "$type": "color", "$value": "{color.neutral.900}" }, 
+          "colorStrokeFocus1":            { "$type": "color", "$value": "{color.neutral.100}" }, 
+  
+
+          "colorBrandBackground":         { "$type": "color", "$value": "{color.primary.500}" },
+          "colorBrandBackgroundHover":    { "$type": "color", "$value": "{color.primary.700}" },
+          "colorBrandBackgroundPressed":  { "$type": "color", "$value": "{color.primary.800}" },
+          "colorBrandForeground1":        { "$type": "color", "$value": "{color.primary.500}" }, 
+          "colorOnBrandBackground":       { "$type": "color", "$value": "{color.neutral.100}" }, 
+  
+
+          "colorPaletteRedBackground3":   { "$type": "color", "$value": "{color.danger.500}" },
+          "colorPaletteRedForeground3":   { "$type": "color", "$value": "{color.danger.700}" },
+          "colorPaletteRedBorderActive":  { "$type": "color", "$value": "{color.danger.500}" }
+        },
+  
+        "shape": {
+
+          "borderRadiusNone":   { "$type": "dimension", "$value": "0rem" },
+          "borderRadiusSmall":  { "$type": "dimension", "$value": "0.125rem" }, 
+          "borderRadiusMedium": { "$type": "dimension", "$value": "{border.radius.s}" }, 
+          "borderRadiusLarge":  { "$type": "dimension", "$value": "{border.radius.m}" }, 
+          "borderRadiusCircular": { "$type": "dimension", "$value": "{border.radius.pill}" }
+        },
+  
+        "borderWidth": {
+          "strokeWidthThin":    { "$type": "dimension", "$value": "{border.width.s}" },
+          "strokeWidthThick":   { "$type": "dimension", "$value": "{border.width.m}" }  
+        },
+  
+        "spacing": {
+          "// Map Fluent's spacing ramp to your existing scale": "",
+          "spacingHorizontalXXS": { "$type": "dimension", "$value": "{spacing.xxs}" }, 
+          "spacingHorizontalXS":  { "$type": "dimension", "$value": "{spacing.xs}" },  
+          "spacingHorizontalS":   { "$type": "dimension", "$value": "{spacing.s}" },  
+          "spacingHorizontalM":   { "$type": "dimension", "$value": "{spacing.l}" },   
+          "spacingHorizontalL":   { "$type": "dimension", "$value": "{spacing.xl}" }   
+        }
+      }
+    }
+  }
